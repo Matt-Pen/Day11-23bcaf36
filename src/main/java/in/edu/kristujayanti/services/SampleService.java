@@ -193,7 +193,7 @@ public class SampleService {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(from));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
-            message.setSubject("QR code for your booking of the named: "+ eventname);
+            message.setSubject("QR code for your booking of the event named: "+ eventname);
 
             // Create message parts
             MimeBodyPart textPart = new MimeBodyPart();
