@@ -56,7 +56,7 @@ public class SampleService {
     public void usersign(RoutingContext ctx) {
         //some more git test
         JsonObject signin = ctx.getBodyAsJson();
-        String user = signin.getString("user");
+        String user = signin.getString("email");
         String name = signin.getString("name");
 
         ctx.response().setChunked(true);
@@ -76,7 +76,7 @@ public class SampleService {
     public void userlog(RoutingContext ctx) {
         JsonObject login = ctx.getBodyAsJson();
         JsonArray jarr = new JsonArray();
-        String user = login.getString("user");
+        String user = login.getString("email");
         String pwd = login.getString("pass");
         String hashlog = hashit(pwd);
         String status = "";
